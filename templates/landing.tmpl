@@ -1,0 +1,27 @@
+{{define "landing"}}
+
+<html>
+  <script type="text/javascript" src="https://rawgit.com/23/resumable.js/master/resumable.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="/javascript/upload.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+  {{ template "HEADER" . }}
+
+  <div class="wrapper">
+      <h2> Upload a File </h2><br>
+
+      <div class="large-12 columns">
+        <p> Select files to upload </p>
+        <button id="browseButton" class="btn">Add Files</button>
+        <button id="uploadFiles" class="btn btn--primary">Start Upload</button>
+        <div class="alert-box alert" data-nothingToUpload>Error Nothing To Upload, Please Add Some Files</div>
+        <div id="results" class="panel"></div>Status:
+        <div class="alert-box secondary"></div>
+      </div>
+  </div>
+
+  {{ template "FOOTER" . }}
+</html>
+
+{{end}}
