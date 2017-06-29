@@ -1,0 +1,27 @@
+.drop-zone {
+    text-align:center;
+    border:2px dashed #ccc;
+}
+.danger, .danger:hover {
+    background-color: #e74c3c;
+}
+.inverse, .inverse:hover {
+    background-color: #34495e;
+}
+input[type="file"] {
+    height:32px;
+}
+div[data-nothingToUpload] {
+    display:none;
+}
+.deleteFile {
+    padding: 3px 7px;
+    color: #bf0000;
+    font-weight: bold;
+    cursor:pointer;
+}
+.meter {
+    color:#fff;
+    line-height:18px;
+    font-size:12px;
+}
