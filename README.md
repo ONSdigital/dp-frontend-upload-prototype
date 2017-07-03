@@ -68,7 +68,7 @@ of line 6 in javascript/upload.js to what you would like the number to be.
 ### Spike limitations and considerations
 
 - The official AWS SDK was not used for this spike as the documentation is difficult
-to read and does seem idiomatic for the Go language. Instead,
+to read and does not seem idiomatic for the Go language. Instead,
 http://godoc.org/gopkg.in/amz.v1/aws was used, as it was user friendly and well
 documented.
 - The s3 library can exhibit unexpected behaviour occasionally when handling
@@ -76,7 +76,7 @@ simultaneous uploads. When adding a part to a multi part upload the code will no
 throw an error if the part is not added successfully, this means that when the client
 has sent all its requests, then we have to check to see if all parts are actually in
 the s3 multi cache. If this is not the case we have to tell the client to retry the
-upload until all parts are in the cache. By default, the client will send three
+upload until all parts are in the cache. By default, the client will send 15
 simultaneous requests to the server.
 - It can take up to 10 seconds to receive a response from the server while it adds
 parts to the s3 multi cache. This may be an unreasonable amount of time to wait, so it
