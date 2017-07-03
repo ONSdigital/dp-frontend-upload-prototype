@@ -62,6 +62,9 @@ by running the command:
 
 `head -c 1073741824 </dev/urandom >myfile`
 
+If you wish to change the number of simultaneous requests to the server, change the value
+of line 6 in javascript/upload.js to what you would like the number to be.
+
 ### Spike limitations and considerations
 
 - The official AWS SDK was not used for this spike as the documentation is difficult
