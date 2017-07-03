@@ -2,7 +2,8 @@ $( document ).ready(function() {
 
   var r = new Resumable({
     target: '/upload',
-    chunkSize: 1 * 1024 * 1024,
+    chunkSize: 5 * 1024 * 1024,
+    simultaneousUploads: 3,
   });
 
   if(!r.support) location.href = '/some-old-crappy-uploader';
@@ -11,6 +12,7 @@ $( document ).ready(function() {
       uploadFile      = $('#uploadFiles'),
       browseButton    = $('#browseButton'),
       nothingToUpload = $('[data-nothingToUpload]');
+      pauseUpload     = $('#pauseUpload');
 
   r.assignBrowse(browseButton);
 
@@ -27,6 +29,7 @@ $( document ).ready(function() {
 
   uploadFile.on('click', function () {
       if (results.children().length > 0) {
+          pauseUpload.removeClass('hidden');
           r.upload();
       } else {
           nothingToUpload.fadeIn();
@@ -34,6 +37,11 @@ $( document ).ready(function() {
             nothingToUpload.fadeOut();
           }, 3000);
       }
+  });
+
+  pauseUpload.on('click', function () {
+      console.log('pausing upload');
+      r.pause();
   });
 
   $(document).on('click', '.deleteFile', function () {
@@ -53,6 +61,7 @@ $( document ).ready(function() {
 
   r.on('fileSuccess', function (file, message) {
       $('[data-uniqueId=' + file.uniqueIdentifier + ']').find('.progress').addClass('success');
+      pauseUpload.addClass('hidden');
   });
 
   r.on('uploadStart', function () {
@@ -61,6 +70,14 @@ $( document ).ready(function() {
 
   r.on('complete', function () {
       $('.alert-box').text('Done Uploading');
-  })
+  });
+
+  r.on('fileError', function(file, message) {
+      console.log('server responded with unexpected status: ' + message);
+      setTimeout(function () {
+        console.log('retrying ....');
+        file.retry();
+      }, 3000);
+  });
 
 });

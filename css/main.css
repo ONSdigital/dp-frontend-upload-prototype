@@ -25,3 +25,6 @@ div[data-nothingToUpload] {
     line-height:18px;
     font-size:12px;
 }
+.hidden {
+    display:none;
+}

@@ -1,0 +1,49 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "AjbjbhFVAOP/1NU5HL+uy+X/yJo=",
+			"path": "github.com/ONSdigital/go-ns/log",
+			"revision": "e7fb34381589fa5b8e566fbd1edd3c09282fb358",
+			"revisionTime": "2017-06-30T07:39:17Z"
+		},
+		{
+			"checksumSHA1": "6PQFibmHgsXFHoRQPmkw2V+59Lk=",
+			"path": "github.com/gorilla/mux",
+			"revision": "18fca31550181693b3a834a15b74b564b3605876",
+			"revisionTime": "2017-05-30T19:55:47Z"
+		},
+		{
+			"checksumSHA1": "Cz6S4ejgcxlJfzRb72YlOrFoCPQ=",
+			"path": "github.com/gorilla/schema",
+			"revision": "8b1100835db5bbdae88541510f70d114b91a7e4d",
+			"revisionTime": "2017-06-12T21:54:33Z"
+		},
+		{
+			"checksumSHA1": "Ai1Jq30ypG7ElmWWLmnj39u2CSc=",
+			"path": "github.com/ian-kent/gofigure",
+			"revision": "c9dc3a1359affde410a8d90e28132a1126604270",
+			"revisionTime": "2017-05-02T19:22:41Z"
+		},
+		{
+			"checksumSHA1": "CIK3BBNX3nuUQCmNqTQydNfMNKI=",
+			"path": "github.com/mgutz/ansi",
+			"revision": "9520e82c474b0a04dd04f8a40959027271bab992",
+			"revisionTime": "2017-02-06T15:57:36Z"
+		},
+		{
+			"checksumSHA1": "Wgg12N5XhSfpwPNF6KqjaAe6UsQ=",
+			"path": "gopkg.in/amz.v1/aws",
+			"revision": "ad23e96a31d28364dc0290f44b1a922aba379e18",
+			"revisionTime": "2015-01-11T12:32:59Z"
+		},
+		{
+			"checksumSHA1": "zTaGxe6Zq98GIRDolA2kWhAk94g=",
+			"path": "gopkg.in/amz.v1/s3",
+			"revision": "ad23e96a31d28364dc0290f44b1a922aba379e18",
+			"revisionTime": "2015-01-11T12:32:59Z"
+		}
+	],
+	"rootPath": "github.com/ONSdigital/dp-frontend-upload-prototype"
+}
