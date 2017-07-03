@@ -4,6 +4,7 @@
 
 - Go
 - AWS Credentials
+- Chrome or Firefox or Safari (This will not run on IE!!)
 
 ### How to run the server
 
@@ -83,3 +84,8 @@ unique id (uuid) to add in front of the file name to avoid conflicts when upload
 files with the same name.
 - We should probably assert the checksum (MD5) is the same before and after the upload
 to avoid any data corruption during the data upload.
+- Increasing the number of simultaneous requests does improve the time taken for a file
+to upload. For example, a 1GB file with 3 simultaneous requests will take ~ 20 minutes to
+upload - increasing this number to 15 simultaneous requests results in the file taking
+around 10 minutes to upload. It is not yet known what the limit is before the server
+begins to slow after a given number of simultaneous requests.

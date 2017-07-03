@@ -3,7 +3,7 @@ $( document ).ready(function() {
   var r = new Resumable({
     target: '/upload',
     chunkSize: 5 * 1024 * 1024,
-    simultaneousUploads: 3,
+    simultaneousUploads: 15,
   });
 
   if(!r.support) location.href = '/some-old-crappy-uploader';
