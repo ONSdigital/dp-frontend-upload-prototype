@@ -191,7 +191,7 @@ func uploadToS3(w http.ResponseWriter, req *http.Request, b []byte, resum *Resum
 
 		log.Debug("number of parts in cache", log.Data{"n": len(parts)})
 
-		// Only complete the number when all chunks are in the cache
+		// Only complete the upload when all chunks are in the cache
 		if len(parts) == resum.TotalChunks {
 			if err := m.Complete(parts); err != nil {
 				log.ErrorR(req, err, nil)
